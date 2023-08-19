@@ -15,6 +15,13 @@ int main(){
     int A;
     A = cin.get();
     cout<<A<<endl;
-
+    int arr[15];
+    fill_n(arr,15,1); // fills the entire array with value 1
+    for(int i=0; i<15; i++)
+        cout<< arr[i] << " ";
+    cout << endl;
+    cout << sizeof(arr) << endl;
+    cout << sizeof(arr) / sizeof(int) << endl;
+    
     return 0;
 }
