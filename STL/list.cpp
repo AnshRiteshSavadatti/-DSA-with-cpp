@@ -4,9 +4,20 @@ using namespace std;
 
 int main(){
     list<int>l;
+     // push_front()
+    // push_ back();
+    // pop_front();
+    // pop_back();
+    // begin, end, rbegin, rend;
+    // size
+    // clear
+    // empty
+    // at
+    // remove o(1);
     l.push_back(1);
     l.push_front(0);
     l.push_back(2);
+    l.remove(2);
     cout << "The size is "<< l.size() << endl;
     for(auto it : l){
         cout << it << " ";

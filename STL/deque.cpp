@@ -4,6 +4,16 @@ using namespace std;
 
 int main(){
     deque<int>d;
+    // push_front()
+    // push_ back();
+    // pop_front();
+    // pop_back();
+    // begin, end, rbegin, rend;
+    // size
+    // clear
+    // empty
+    // at
+     
     d.push_back(1);
     d.push_front(0);
     d.push_back(2);

@@ -3,13 +3,19 @@
 using namespace std;
 
 int main(){
+    // push
+    // size
+    // pop
+    // top
+    // empty
+    // almost all the functions are long(n)
     // max heap
-    priority_queue<int>maxi;
+    priority_queue<int>maxi;  // stores in decending order
     // decending heap
 
     // min heap
-    priority_queue<int , vector<int>, greater<int>> mini;
-    for(int i=0; i < 5; i++)
+    priority_queue<int , vector<int>, greater<int>> mini;   // miminum priority queue
+    for(int i=0; i < 5; i++)    // stores in ascending  order
         maxi.push(i);
     cout <<" The size of max heap is " <<  maxi.size() << endl;
     int n = maxi.size();
