@@ -1,11 +1,12 @@
 #include<iostream>
 using namespace std;
 
-
+// recursion same as loop but not that efficient 
 int power(int n, int p){
     if(p == 0)
         return 1;
     int temp = power(n,p-1);
+    cout << temp << endl;
     return n * temp;
 }
 
