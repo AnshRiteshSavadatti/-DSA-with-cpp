@@ -10,7 +10,7 @@ int main() {
         for (int j = 0; j < i; j++)
             cout << " ";
         cout << "*" << endl;
-        this_thread::sleep_for(chrono::milliseconds(1000));
+        // this_thread::sleep_for(chrono::milliseconds(1000));
     }
     return 0;
 }

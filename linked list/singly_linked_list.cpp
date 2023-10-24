@@ -78,6 +78,43 @@ void insert_at_pos(Node* &head,Node* &tail, int d){
     return;
 }
 
+void delete_from_beg(Node* &head){
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+    return;
+}
+
+void delete_from_end(Node* &head, Node* &tail){
+    Node* temp = head;
+    while(temp->next != tail){
+        temp = temp->next;
+    }
+    tail = temp;
+    temp = temp->next;
+    delete temp;
+}
+
+void delete_at_pos(Node* &head, Node* &tail, int pos){
+    int c = 1;
+    if(pos == 1){
+        delete_from_beg(head);
+        return;
+    }
+    else if(pos == len(head)){
+        delete_from_end(head, tail);
+        return;
+    }
+    Node* temp = head;
+    while(c < pos -1){
+        temp = temp->next;
+        c++;
+    }
+    cout << "The data which is removed is " << temp->next->data << endl;;
+    temp->next = temp->next->next;
+    return;
+}
+
 void display(Node* & head){
     Node* temp = head;
     while(temp != NULL){
@@ -95,6 +132,8 @@ int main(){
     int data;
     while(1){
         cout << "Enter \n1 to insert at begning \n2 to insert at end \n3 to insert at position \n4 to display " << endl;
+        cout << "5 to delete ant any position" << endl;
+        cout << "0 to exit" << endl;
         cin >> ch;
         switch(ch){
             case 1:
@@ -113,7 +152,13 @@ int main(){
                 insert_at_pos(head, tail, data);
                 break;
             case 4:
+                cout << "HEAD " << head->data << " " << "TAIL " << tail->data << endl;
                 display(head);
+                break;
+            case 5:
+                cout << "Enter the positon which is to be deleted" << endl;
+                cin >> data;
+                delete_at_pos(head, tail, data);
                 break;
             default :
                 exit(0);
