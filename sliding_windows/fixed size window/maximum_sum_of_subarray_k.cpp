@@ -18,15 +18,14 @@ void sum(int arr[], int n, int k){
     int sum = 0;
     int maxi = INT_MIN;
     while(j < n){
-        if(j - i + 1 <= k){
-            sum += arr[j];
+        sum += arr[j];
+        if(j-i+1 < k)
             j++;
-        }
-        else{
-            sum = sum - arr[i] + arr[j];
-            j++;
+        else if (j-i+1 == k){
+            maxi = max(maxi, sum);
+            sum -= arr[i];
             i++;
-            maxi = max(maxi,sum);
+            j++;
         }
     }
     cout << "The largest sum is " << maxi << endl; 
@@ -44,4 +43,5 @@ int main(){
     read_array(arr,n);
     print_array(arr,n);
     sum(arr,n,k);
+    return 0;
 }

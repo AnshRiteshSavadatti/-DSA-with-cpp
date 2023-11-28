@@ -23,36 +23,30 @@ vector<int> answer(int arr[], int n, int k){
     list < int > l;
     vector < int > vec;
     int maxi = INT_MIN;
+
     while(j  < n){
+
+        // calculations 
+        while(l.size() > 0 && l.back() < arr[j])
+            l.pop_back();
+        l.push_back(arr[j]);
+
+        // window size not yet reached
         if(j - i + 1 < k){
-            l.push_back(arr[j]);
-            maxi = max(maxi, arr[j]);
-            j++; 
-        }
-        else{
-            vec.push_back(maxi);
-            list < int > :: iterator it = find(l.begin(), l.end(), maxi);
-            list < int > :: iterator  it1 = l.begin(); 
-            while( it1 != it){
+            j++;
+        }    
+        else if (j - i + 1 == k){
+            // print the answer || push_back() answer
+            vec.push_back(l.front());
+
+            // slide the window
+            if(l.front() == arr[i])
                 l.pop_front();
-                it1++;
-            }
-            if(arr[i] == maxi && arr[i] == l.front()){ 
-                l.pop_front();
-                maxi = l.front();
-            }
             i++;
             j++;
-            l.push_back(arr[j]); 
-            if(arr[j] > maxi){
-                l.clear();
-                l.push_back(arr[j]);
-            }
-            maxi = max(maxi, arr[j]);
         }
     }
     return vec;
-
 }
 
 int main(){

@@ -125,14 +125,29 @@ void display(Node* & head){
     return;
 }
 
+Node* get_middle(Node* head){
+    Node* fast = head->next;
+    Node* slow = head;
+    if(head == NULL || head->next == NULL)
+        return head;
+    while(fast != NULL){
+        slow = slow->next;
+        fast = fast->next;
+        if(fast != NULL)
+            fast = fast->next;
+    }
+    return slow;
+}
+
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
+    Node* temp;
     int ch;
     int data;
     while(1){
         cout << "Enter \n1 to insert at begning \n2 to insert at end \n3 to insert at position \n4 to display " << endl;
-        cout << "5 to delete ant any position" << endl;
+        cout << "5 to delete ant any position" << endl << "6 to find middle of list" << endl;
         cout << "0 to exit" << endl;
         cin >> ch;
         switch(ch){
@@ -159,6 +174,11 @@ int main(){
                 cout << "Enter the positon which is to be deleted" << endl;
                 cin >> data;
                 delete_at_pos(head, tail, data);
+                break;
+            case 6:
+                cout << "To get the value at middle" << endl;
+                temp = get_middle(head);
+                cout << "The data at middle is "  << temp->data<< endl; 
                 break;
             default :
                 exit(0);
