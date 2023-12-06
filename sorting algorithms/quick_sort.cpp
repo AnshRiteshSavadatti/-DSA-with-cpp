@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int arr[100];
-
 int partition(int arr[], int l, int r){
     int p = arr[l];
     int i = l;
@@ -50,7 +48,7 @@ void print_array(int arr[], int n){
 }
 
 int main(){
-    
+    int arr[100];
     generate_array(arr,100);
     QuickSort(arr, 0, 99);
     print_array(arr,100);
