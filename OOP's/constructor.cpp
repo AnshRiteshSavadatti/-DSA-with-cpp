@@ -77,6 +77,12 @@ int main(){
 
 //    ansh.setName("ansh");
    ansh.print(); 
+
+    sa student;
+    cout << endl;
+    student = ansh;
+    student.print();
+   
     return 0;
 }
 

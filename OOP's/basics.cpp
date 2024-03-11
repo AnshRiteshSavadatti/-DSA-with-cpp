@@ -1,6 +1,16 @@
 #include <iostream>
 using namespace std;
 
+/*
+    Concepts ot learn 
+    padding 
+    greedy allignment
+    const keyword in object creations and in function
+    initialization list
+    
+
+    A object has some attributies or properties and has some behaviour
+*/
 
 // the size of empty class is 1 byte the storage is given to track the class
 // by default the access modifiers of class is private

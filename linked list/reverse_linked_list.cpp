@@ -47,6 +47,26 @@ void reverse(Node* &head, Node* curr, Node* prv){
     return;
 }
 
+// Node* reverse(Node* head, Node* curr, Node* pr){
+//     if(head == NULL || head->next == NULL){
+//         return head ;
+//     }
+//     Node* prv = NULL;
+//     Node* cur = head;
+//     Node* nex = head->next;
+
+//     while(cur != NULL){
+//         cur->next = prv;
+//         prv = cur;
+//         cur = nex;
+//         if(nex != NULL)
+//             nex = nex->next;
+//         cout << "HI" << endl;
+//     }
+//     cout << "yo" << endl;
+//     return prv;
+// }
+
 int main(){
     Node* head = NULL;
     int ch;
@@ -68,7 +88,8 @@ int main(){
                 display(head);
                 break;
             case 3:
-                reverse(head,head,NULL);
+                head = reverse(head,head,NULL);
+                cout << "hello" << endl;
                 break;
             default:
                 cout << "Thank you" << endl;

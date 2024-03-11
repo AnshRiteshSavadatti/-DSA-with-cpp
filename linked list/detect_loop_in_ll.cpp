@@ -48,6 +48,9 @@ void display(Node* head){
     return;
 }
 
+/*
+    cycle can also be detected by using map
+*/
 Node* start_of_loop(Node* head){
     if(head == NULL)
         return NULL;
