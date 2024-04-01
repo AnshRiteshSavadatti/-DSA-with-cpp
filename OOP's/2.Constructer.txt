@@ -1,0 +1,84 @@
+/////Constructor/////
+
+Constructor in C++ is a special method that is invoked automatically at the time of object 
+creation. It is used to initialize the data members of new objects generally. The constructor 
+in C++ has the same name as the class or structure. It constructs the values i.e. provides 
+data for the object which is why it is known as a constructor.
+
+->Constructor is a member function of a class, whose name is the same as the class name.
+->Constructor is a special type of member function that is used to initialize the data members 
+  for an object of a class automatically when an object of the same class is created.
+->Constructor is invoked at the time of object creation. It constructs the values i.e. provides 
+  data for the object that is why it is known as a constructor.
+->Constructors do not return value, hence they do not have a return type.
+->A constructor gets called automatically when we create the object of the class.
+->Constructors can be overloaded. {Parametarized Constructors}
+->A constructor can not be declared virtual.
+
+The statement "A constructor cannot be declared virtual" means that constructors cannot 
+be marked with the virtual keyword in C++ (and in many other programming languages). The 
+virtual keyword is used to declare a member function as virtual, which allows for dynamic 
+dispatch and polymorphic behavior when working with inheritance hierarchies.
+The virtual keyword is used in object-oriented programming languages like C++ to declare a 
+member function as virtual. This concept is fundamental to understanding polymorphism and 
+dynamic dispatch in inheritance hierarchies.
+
+When a function is declared as virtual, it means that the function can be overridden in 
+derived classes. This allows for polymorphic behavior, where a function call is resolved at 
+runtime based on the dynamic type of the object, rather than at compile time based on the static 
+type of the pointer or reference to the object.
+
+Dynamic Dispatch: Virtual functions enable dynamic dispatch, meaning that the correct function
+implementation is selected based on the runtime type of the object. This allows for more flexible 
+and extensible code, particularly in scenarios involving inheritance and polymorphism.
+
+Virtual Destructors: In addition to virtual functions, it's essential to know about virtual destructors. 
+When working with polymorphic hierarchies and using base class pointers, having a virtual destructor in 
+the base class ensures that the correct destructor is called when deleting objects through base class pointers. 
+This helps in proper cleanup of resources and prevents memory leaks.
+
+Types of Constructor in C++
+Constructors can be classified based on in which situations they are being used. There are 4 types of constructors in C++:
+
+1.Default Constructor
+2.Parameterized Constructor
+3.Copy Constructor
+4.Move Constructor
+
+1. Default Constructor in C++
+A default constructor is a constructor that doesn’t take any argument. It has no parameters. 
+It is also called a zero-argument constructor.
+A Default constructor can contain default argument with default values for an object.
+
+2. Parameterized Constructor in C++
+Parameterized Constructors make it possible to pass arguments to constructors. Typically, these arguments 
+help initialize an object when it is created. To create a parameterized constructor, simply add parameters 
+to it the way you would to any other function. When you define the constructor’s body, use the parameters 
+to initialize the object.
+
+Important Note: Whenever we define one or more non-default constructors( with parameters ) for a class, 
+a default constructor( without parameters ) should also be explicitly defined as the compiler will not 
+provide a default constructor in this case. However, it is not necessary but it’s considered to be the 
+best practice to always define a default constructor.
+
+Default Arguments with C++ Parameterized Constructor
+Just like normal functions, we can also define default values for the arguments of parameterized constructors. 
+All the rules of the default arguments will be applied to these parameters.
+
+Default Arguments: 
+Default arguments are values assigned to parameters in a function declaration. When a function is called without 
+providing values for these parameters, the default values are used. If values are passed the default value is overridden.
+Example:
+
+Here its okay even if we dont assign values to v and w , we can pass if we want 
+int sum(int x, int y, int z = 0, int w = 0) //assigning default values to z,w as 0
+{
+    return (x + y + z + w);
+}
+
+If function overloading is done containing the default arguments, then we need to make 
+sure it is not ambiguous to the compiler, otherwise it will throw an error.
+ 
+Ambiguity in Function Overloading: Ambiguity arises in function overloading when the compiler 
+cannot determine which overloaded function to call based on the provided arguments. This can happen 
+if there are multiple overloaded functions that could match the provided arguments equally well.

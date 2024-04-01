@@ -1,0 +1,23 @@
+C uses the malloc() and calloc() function to allocate memory dynamically at 
+run time and uses a free() function to free dynamically allocated memory. 
+C++ supports these functions and also has two operators new and delete, that 
+perform the task of allocating and freeing the memory in a better and easier way.
+
+Normal Array Declaration vs Using new 
+There is a difference between declaring a normal array and allocating a block of 
+memory using new. The most important difference is, that normal arrays are deallocated
+by the compiler (If the array is local, then deallocated when the function returns 
+or completes). However, dynamically allocated arrays always remain there until either 
+they are deallocated by the programmer or the program terminates.
+
+What if enough memory is not available during runtime? 
+If enough memory is not available in the heap to allocate, the new request
+indicates failure by throwing an exception of type std::bad_alloc, unless
+“nothrow” is used with the new operator, in which case it returns a NULL 
+pointer 
+Therefore, it may be a good idea to check for the pointer variable produced 
+by the new before using its program. 
+
+delete operator
+Since it is the programmer’s responsibility to deallocate dynamically allocated 
+memory, programmers are provided delete operator in C++ language. 
