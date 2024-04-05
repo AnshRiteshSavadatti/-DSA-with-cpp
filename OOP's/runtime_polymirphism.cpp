@@ -1,3 +1,9 @@
+/*
+    Function Overriding
+        Function Overriding occurs when a derived class has a definition for one of the member functions 
+        of the base class. That base function is said to be overridden.
+*/
+
 #include<iostream>
 using namespace std;
 

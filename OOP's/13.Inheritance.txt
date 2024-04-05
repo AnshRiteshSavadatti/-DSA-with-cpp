@@ -1,0 +1,138 @@
+/////Inheritance in C++/////
+The capability of a class to derive properties and characteristics from another class is 
+called Inheritance.
+
+Inheritance is a feature or a process in which, new classes are created from the existing 
+classes. The new class created is called “derived class” or “child class” and the existing 
+class is known as the “base class” or “parent class”. The derived class now is said to 
+be inherited from the base class.
+When we say derived class inherits the base class, it means, the derived class inherits all 
+the properties of the base class, without changing the properties of base class and may 
+add new features to its own. These new features in the derived class will not affect the 
+base class. The derived class is the specialized class for the base class.
+
+Sub Class: The class that inherits properties from another class is called Subclass or Derived Class. 
+Super Class: The class whose properties are inherited by a subclass is called Base Class or Superclass. 
+
+Note:   A derived class doesn’t inherit access to private data members. However, it does inherit 
+        a full parent object, which contains any private members which that class declares.
+
+->  When a base class is privately inherited by the derived class, public members of the base class 
+    becomes the private members of the derived class and therefore, the public members of the base class 
+    can only be accessed by the member functions of the derived class. They are inaccessible to the 
+    objects of the derived class.
+->  On the other hand, when the base class is publicly inherited by the derived class, public 
+    members of the base class also become the public members of the derived class. Therefore, the 
+    public members of the base class are accessible by the objects of the derived class as well as 
+    by the member functions of the derived class.
+
+Modes of Inheritance: There are 3 modes of inheritance.
+
+1) Public Mode: 
+    If we derive a subclass from a public base class. Then the public member of the base 
+    class will become public in the derived class and protected members of the base class will become 
+    protected in the derived class.
+2) Protected Mode: 
+    If we derive a subclass from a Protected base class. Then both public members and 
+    protected members of the base class will become protected in the derived class.
+3) Private Mode: 
+    If we derive a subclass from a Private base class. Then both public members and 
+    protected members of the base class will become Private in the derived class.
+
+Types Of Inheritance:-
+    Single inheritance
+    Multilevel inheritance
+    Multiple inheritance
+    Hierarchical inheritance
+    Hybrid inheritance
+    Types of Inheritanc
+
+1. Single Inheritance: 
+    In single inheritance, a class is allowed to inherit from only one class. 
+    i.e. one subclass is inherited by one base class only.
+
+2. Multiple Inheritance: 
+    Multiple Inheritance is a feature of C++ where a class can inherit from more than 
+    one class. i.e one subclass is inherited from more than one base class.
+    A      B
+     \    /
+      \  /
+       C
+
+
+3. Multilevel Inheritance: 
+    In this type of inheritance, a derived class is created from another derived class.
+    A
+    |
+    B
+    |
+    C
+
+
+4. Hierarchical Inheritance: 
+    In this type of inheritance, more than one subclass is inherited from a single base 
+    class. i.e. more than one derived class is created from a single base class.
+          Vehicle
+         /       \
+        /         \
+    Car           Bike
+   /   \            \
+Sedan  SUV         SportsBike
+
+
+5. Hybrid (Virtual) Inheritance: 
+    Hybrid Inheritance is implemented by combining more than one type of inheritance. 
+    For example: Combining Hierarchical inheritance and Multiple Inheritance. 
+     A  B
+    / \ |
+   /   \|
+  C     E    
+
+
+6. A special case of hybrid inheritance: 
+    Multipath inheritance, also known as diamond inheritance, is a special case of hybrid 
+    inheritance in object-oriented programming where a derived class inherits from two 
+    base classes, and those two base classes share a common base class. This inheritance 
+    structure creates a diamond-shaped hierarchy, leading to potential ambiguity and 
+    issues known as the diamond problem.
+
+       A
+      / \
+     /   \
+    B     C
+     \   /
+      \ /
+       D
+    The main issue with multipath inheritance arises from the ambiguity in accessing members 
+    of the common base class (class A in this case) through the derived class (class D). 
+    For example, if you uncomment the line objD.displayA(); in the main function, it will 
+    result in a compile-time error due to ambiguity. This is because the compiler doesn't 
+    know whether to use the version of displayA() from class B or class C.
+
+1) Avoiding ambiguity using the scope resolution operation:
+    To resolve such ambiguity, you can use scope resolution to explicitly specify which version 
+    of the function or member variable you want to access. For example, you can use objD.B::displayA(); 
+    or objD.C::displayA(); to specify that you want to call displayA() from either class B or class C, 
+    respectively.
+2) Avoiding ambiguity using the virtual base class: 
+    Virtual Inheritanc
+
+/////Virtual Inheritanc/////
+    Virtual inheritance is a concept in C++ that allows you to create a hierarchy of classes 
+    where a base class is inherited by multiple derived classes, but only one instance of the 
+    base class is shared among all derived classes. This is in contrast to regular inheritance, 
+    where each derived class has its own copy of the base class's members
+
+    ->Avoiding Diamond Problem: 
+        One of the main reasons for using virtual inheritance is to avoid the "diamond problem" 
+        that occurs in multiple inheritance. The diamond problem arises when a class inherits from 
+        two or more classes that have a common base class. This can lead to ambiguity in accessing 
+        members and can cause issues during compilation.    
+    ->Single Shared Instance: 
+        With virtual inheritance, the base class is shared among all derived classes that virtually 
+        inherit from it. This means that there is only one instance of the base class in memory, 
+        regardless of how many times it is inherited.
+    ->Storage Layout: 
+        When a class virtually inherits from a base class, the compiler adjusts the storage layout 
+        of objects to accommodate the single shared instance of the base class. The virtual base 
+        class is typically stored at an offset from the derived class's beginning.

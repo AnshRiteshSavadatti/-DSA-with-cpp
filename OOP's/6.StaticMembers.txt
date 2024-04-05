@@ -1,0 +1,36 @@
+S/////tatic Data Members/////
+    Stacic data members are members which are common among all the objects, like if there 
+    is a class called student, and there is a attribute called university name in student class
+    the if we make the university name as static, then all the student objects will share the same 
+    university name
+    Static data members are class members that are declared using static keywords. 
+    A static member has certain special characteristics which are as follows:
+
+    ->Only one copy of that member is created for the entire class and is shared by all 
+      the objects of that class, no matter how many objects are created.
+    ->It is initialized before any object of this class is created, even before the main starts.
+    ->It is visible only within the class, but its lifetime is the entire program.
+
+    Static members are only declared in a class declaration, not defined. They must be 
+    explicitly defined outside the class using the scope resolution operator.
+
+/////Static Member Function in C++/////
+    The static keyword is used with a variable to make the memory of the variable static once a static 
+    variable is declared its memory can’t be changed
+
+    1) A static member function is independent of any object of the class. 
+    2) A static member function can be called even if no objects of the class exist.
+    3) A static member function can also be accessed using the class name through the scope resolution operator.
+    4) A static member function can access static data members and static member functions inside or outside of the class.
+    5) Static member functions have a scope inside the class and cannot access the current object pointer.
+    6) You can also use a static member function to determine how many objects of the class have been created.
+
+    The reason we need Static member function:
+    Static members are frequently used to store information that is shared by all objects in a class. 
+    For instance, you may keep track of the quantity of newly generated objects of a specific class type using 
+    a static data member as a counter. This static data member can be increased each time an object is generated 
+    to keep track of the overall number of objects.
+
+
+For more information
+https://www.geeksforgeeks.org/cpp-static-data-members/

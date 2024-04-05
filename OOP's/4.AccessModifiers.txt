@@ -1,0 +1,61 @@
+/////Access Modifiers in C++//////
+    Access modifiers are used to implement an important aspect of Object-Oriented Programming 
+    known as Data Hiding.
+
+    There are 3 types of access modifiers available in C++: 
+
+    1.Public
+    2.Private
+    3.Protected
+
+    Note: If we do not specify any access modifiers for the members inside the class, 
+    then by default the access modifier for the members will be Private.
+
+    1. Public: All the class members declared under the public specifier will be available to everyone. 
+    The data members and member functions declared as public can be accessed by other classes and functions 
+    too. The public members of a class can be accessed from anywhere in the program using the direct member 
+    access operator (.) with the object of that class.
+
+    2. Private: The class members declared as private can be accessed only by the member functions inside the class. 
+    They are not allowed to be accessed directly by any object or function outside the class. Only the member functions 
+    or the friend functions are allowed to access the private data members of the class. 
+
+    3. Protected: The protected access modifier is similar to the private access modifier in the sense that it can’t be 
+    accessed outside of its class unless with the help of a friend class. The difference is that the class members declared 
+    as Protected can be accessed by any subclass (derived class) of that class as well. 
+
+    Note: This access through inheritance can alter the access modifier of the elements of base class in derived class 
+    depending on the mode of Inheritance.
+
+/////Friend Class and Function in C++/////
+    A friend class can access private and protected members of other classes in which it is declared as a friend. 
+    It is sometimes useful to allow a particular class to access private and protected members of other classes. 
+    For example, a LinkedList class may be allowed to access private members of Node.
+    We can declare a friend class in C++ by using the friend keyword.
+
+    friend class class_name;    // declared in the base class
+
+
+/////Friend Function/////
+    Like a friend class, a friend function can be granted special access to private and protected members of 
+    a class in C++. They are the non-member functions that can access and manipulate the private and protected 
+    members of the class for they are declared as friends.
+
+    Advantages of Friend Functions
+    ->A friend function is able to access members without the need of inheriting the class.
+    ->The friend function acts as a bridge between two classes by accessing their private data.
+    ->It can be used to increase the versatility of overloaded operators.
+    ->It can be declared either in the public or private or protected part of the class.
+
+    Disadvantages of Friend Functions
+    ->Friend functions have access to private members of a class from outside the class 
+      which violates the law of data hiding.
+    ->Friend functions cannot do any run-time polymorphism in their members.
+
+    Important Points About Friend Functions and Classes
+    ->Friends should be used only for limited purposes. Too many functions or external classes are 
+      declared as friends of a class with protected or private data access lessens the value of encapsulation 
+      of separate classes in object-oriented programming.
+    ->Friendship is not mutual. If class A is a friend of B, then B doesn’t become a friend of A automatically.
+    ->Friendship is not inherited. (See this for more details)
+    ->The concept of friends is not in Java.

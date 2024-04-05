@@ -1,0 +1,64 @@
+/////Difference Between Structure and Class in C++/////
+    In C++, a structure works the same way as a class, except for just two small differences. 
+    The most important of them is hiding implementation details. A structure will by default 
+    not hide its implementation details from whoever uses it in code, while a class by default 
+    hides all its implementation details and will therefore by default prevent the programmer 
+    from accessing them.
+
+
+https://www.geeksforgeeks.org/structure-vs-class-in-cpp
+
+
+Why C++ is partially Object Oriented Language?
+    The basic thing which are the essential feature of an object oriented programming 
+    are Inheritance, Polymorphism and Encapsulation. Any programming language that supports 
+    these feature completely are complete Object-oriented programming language whereas any 
+    language that supports all three feature but does not supports all features completely 
+    are Partial Object-oriented programming language.
+
+    ->Inheritance is used to provide the concept of code-reusability.
+
+    ->Polymorphism makes a language able to perform different task at different instance.
+
+    ->Encapsulation makes data abstraction (security or privacy to data) possible. In object-oriented 
+    programming language, Encapsulation is achieved with the help of a class.
+
+    1) Main function is outside the class 
+        C++ supports object-oriented programming, but OO is not intrinsic to the language. You can 
+        write a valid, well-coded, excellently-styled C++ program without using an object even once.
+        #include <bits/stdc++.h> 
+        using namespace std; 
+
+        int main() 
+        { 
+            cout << "Hello World"; 
+            return 0; 
+        } 
+
+
+        While in JAVA, main function is executed first and it reside in the class which is 
+        mandatory. So, we can’t do anything without making Class. 
+        class hello 
+        { 
+            public static void main(String args[]) 
+            { 
+                System.out.println("Hello World"); 
+            } 
+        } 
+
+    2) Concept of Global variable : 
+        In C++, we can declare a variable globally, which can be accessible from anywhere and 
+        hence, it does not provides complete privacy to the data as no one can be restricted to 
+        access and modify those data and so, it provides encapsulation partially whereas In JAVA,
+        we can declare variable inside class only and we can provide access specifier to it.
+        So, in JAVA, basically every data is asked explicitly by user if it should be accessible or not.
+
+    3)Availability of Friend function: 
+        Friend Class A friend class can access private and protected members of other class in which 
+        it is declared as friend. It is sometimes useful to allow a particular class to access private members of other class.
+        Therefore, again the Object oriented features can be violated by C++.
+
+
+    In C++, main function is mandatory, which executes first but it resides outside the class and from there we create objects. So, here creation of class becomes optional and we can write code without using class.
+    https://www.geeksforgeeks.org/c-partially-object-oriented-language/
+

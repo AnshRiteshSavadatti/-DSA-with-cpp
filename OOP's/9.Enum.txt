@@ -1,0 +1,108 @@
+/////Enumeration in C++/////
+
+    In C++, an enum (short for enumeration) is a user-defined data type used to assign names 
+    to integral constants, making the code more readable and easier to maintain. Enums are 
+    defined using the `enum` keyword and can be used to create a set of named constants.
+
+    Enumeration (Enumerated type) is a user-defined data type that can be assigned some limited 
+    values. These values are defined by the programmer at the time of declaring the enumerated 
+    type.
+
+    If we assign a float value to a character value, then the compiler generates an error. In 
+    the same way, if we try to assign any other value to the enumerated data types, the compiler 
+    generates an error.
+
+    #include <iostream>
+
+    // Define an enum named Color with three constants: Red, Green, and Blue
+    enum Color {
+        Red,
+        Green,
+        Blue
+    };
+
+    int main() {
+        // Declare a variable of type Color and initialize it with Green
+        Color myColor = Green;
+
+        // Check the value of myColor and print the corresponding color name
+        switch (myColor) {
+            case Red:
+                std::cout << "The color is Red.\n";
+                break;
+            case Green:
+                std::cout << "The color is Green.\n";
+                break;
+            case Blue:
+                std::cout << "The color is Blue.\n";
+                break;
+            default:
+                std::cout << "Unknown color.\n";
+                break;
+        }
+
+        return 0;
+    }
+
+    In this example, the `enum Color` defines three constants: Red, Green, and Blue. 
+    These constants are automatically assigned integral values starting from 0 
+    (Red = 0, Green = 1, Blue = 2). You can explicitly assign values to enum constants 
+    as well, for example:
+
+    enum Status {
+        OK = 0,
+        ERROR = -1,
+        WARNING = 1
+    };
+
+    Enums are often used to improve code readability by replacing "magic numbers" with 
+    meaningful names. For instance, instead of using `int status = 1;`, you can use 
+    Status status = WARNING;, which makes the code more self-explanatory.
+
+
+    Enum in C++
+    The enum keyword is used to declare enumerated types after that enumerated type name 
+    was written then under curly brackets possible values are defined. After defining 
+    Enumerated type variables are created. 
+
+    Enumerators can be created in two types:-
+
+        1) It can be declared during declaring enumerated types, just add the name of the variable before the semicolon. or,
+        2) Besides this, we can create enumerated type variables as the same as the normal variables.
+
+
+    // C++ Program to Demonstrate the Functioning of Enumerators 
+    // with an Example of Year 
+    #include <bits/stdc++.h> 
+    using namespace std; 
+
+    // Defining enum Year 
+    enum year { 
+        Jan, 
+        Feb, 
+        Mar, 
+        Apr, 
+        May, 
+        Jun, 
+        Jul, 
+        Aug, 
+        Sep, 
+        Oct, 
+        Nov, 
+        Dec 
+    }; 
+
+    // Driver Code 
+    int main() 
+    { 
+        int i; 
+
+        // Traversing the year enum 
+        for (i = Jan; i <= Dec; i++) 
+            cout << i << " "; 
+
+        return 0; 
+    }
+
+    OUTPUT
+    0 1 2 3 4 5 6 7 8 9 10 11

@@ -1,0 +1,104 @@
+///// Local Classes in C++ /////
+A class declared inside a function becomes local to that function and is called Local Class in C++.
+
+    1) A local class name can only be used locally i.e., inside the function and not outside it.
+    2) The methods of a local class must be defined inside it only.
+    3) A local class can have static functions but, not static data members.
+
+    // C++ program without any compilation error 
+    // to demonstrate a Local Class 
+    #include <iostream> 
+    using namespace std; 
+
+    For example, in the following program, Test is a local class in fun(). 
+    // Creating the class 
+    void fun() 
+    { 
+        // local to fun 
+        class Test { 
+            // members of Test class 
+        }; 
+    } 
+
+    // Driver Code 
+    int main() { return 0; }
+
+    1) A local class type name can only be used in the enclosing function.
+    2) All the methods of Local classes must be defined inside the class only. {here methode means functions}
+    3) A Local class cannot contain static data members. It may contain static functions though
+    4) Member methods of the local class can only access static and enum variables of the enclosing 
+    function. Non-static variables of the enclosing function are not accessible inside local classes. 
+    5) Local classes can access global types, variables, and functions.
+
+
+
+/////Nested Classes in C++/////
+    A nested class is a class which is declared in another enclosing class. A nested class is a member and as 
+    such has the same access rights as any other member. The members of an enclosing class have no special 
+    access to members of a nested class; the usual access rules shall be obeyed.
+
+    Nested class can access the private members of the first class, but the first class cannot access the 
+    private members of the class within it 
+
+
+
+
+//// DIFFERNCE BETWEEN LOCAL CLASS AND NESTED CLASS/////
+Nested Class:
+
+    A nested class is a class that is declared within the scope of another class.
+
+    It has access to all members (including private members) of the enclosing class.
+
+    Nested classes can be static or non-static.
+
+    Non-static nested classes (also known as inner classes) have access to the enclosing class's 
+    members as if they were their own members. They can also access static members of the enclosing 
+    class directly.
+    Static nested classes are like regular classes but are scoped within the enclosing class. 
+    They do not have access to non-static members of the enclosing class unless an instance of 
+    the enclosing class is provided.
+
+    Example for nested class
+    class Outer {
+    private:
+        int x;
+        
+    public:
+        class Inner {
+        public:
+            void display(const Outer& obj) {
+                std::cout << "Inner class accessing outer class member x: " << obj.x << std::endl;
+            }
+        };
+    };
+
+
+Local Class:
+
+    A local class is a class that is defined within the scope of a function.
+
+    It cannot have static data members or member functions.
+
+    Local classes can access the enclosing function's local variables and parameters, including those declared const or static.
+
+    Example of a local class:
+
+    void someFunction() {
+        int localVar = 10;
+        
+        class LocalClass {
+        public:
+            void display(int value) {
+                std::cout << "Local class accessing local variable: " << value << std::endl;
+            }
+        };
+
+        LocalClass lc;
+        lc.display(localVar);
+    }
+
+In summary, the main difference between local classes and nested classes lies in their scopes and 
+access to enclosing class or function members. Nested classes are declared within a class and have 
+access to all members of the enclosing class, while local classes are defined within a function 
+and have access to local variables and parameters of that function.

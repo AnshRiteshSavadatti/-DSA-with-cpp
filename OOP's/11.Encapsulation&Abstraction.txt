@@ -1,0 +1,79 @@
+/////Encapsulation in C++/////
+
+    Encapsulation in C++ is defined as the wrapping up of data and information in a single unit. 
+    In Object Oriented Programming, Encapsulation is defined as binding together the data and 
+    the functions that manipulate them.
+
+    Two Important  property of Encapsulation 
+
+    1) Data Protection: 
+        Encapsulation protects the internal state of an object by keeping its data members private. 
+        Access to and modification of these data members is restricted to the class’s public methods, 
+        ensuring controlled and secure data manipulation.
+
+    2) Information Hiding: 
+        Encapsulation hides the internal implementation details of a class from external code. 
+        Only the public interface of the class is accessible, providing abstraction and simplifying 
+        the usage of the class while allowing the internal implementation to be modified without 
+        impacting external code.
+
+
+    Features of Encapsulation
+    Below are the features of encapsulation:
+
+    1) We can not access any function from the class directly. We need an object to access that 
+        function that is using the member variables of that class. 
+    2) The function which we are making inside the class must use only member variables, only then 
+        it is called encapsulation.
+    3) If we don’t make a function inside the class which is using the member variable of the class 
+        then we don’t call it encapsulation.
+    4) Encapsulation improves readability, maintainability, and security by grouping data and methods 
+        together.
+    5) It helps to control the modification of our data members.
+
+
+/////Abstraction in C++/////
+    Data abstraction is one of the most essential and important features of object-oriented programming 
+    in C++. Abstraction means displaying only essential information and hiding the details. Data abstraction 
+    refers to providing only essential information about the data to the outside world, hiding the background 
+    details or implementation
+
+
+    Types of Abstraction:
+    1) Data abstraction – This type only shows the required information about the data and hides the unnecessary 
+        data.
+    2) Control Abstraction – This type only shows the required information about the implementation and hides 
+        unnecessary information.
+
+    Types of Abstraction:
+    1) Data abstraction – This type only shows the required information about the data and hides the 
+        unnecessary data.
+    2) Control Abstraction – This type only shows the required information about the implementation and 
+        hides unnecessary information.
+
+
+    Every function is an encapsulation; in pseudocode:
+
+    point x = { 1, 4 }
+    point y = { 23, 42 }
+
+    numeric d = distance(x, y)
+
+    Here, distance encapsulates the calculation of the (Euclidean) distance between two points in a 
+    plane: it hides implementation details. This is encapsulation, pure and simple.
+
+    Abstraction is the process of generalisation: 
+        taking a concrete implementation and making it applicable to different, albeit somewhat related, 
+        types of data. The classical example of abstraction is C’s qsort function to sort data:
+
+        The thing about qsort is that it doesn't care about the data it sorts — in fact, it doesn’t know what 
+        data it sorts. Rather, its input type is a typeless pointer (void*) which is just C’s way of saying 
+        “I don't care about the type of data” (this is also called type erasure). The important point is that 
+        the implementation of qsort always stays the same, regardless of data type. The only thing that has to 
+        change is the compare function, which differs from data type to data type. qsort therefore expects the 
+        user to provide said compare function as a function argument.
+
+        Encapsulation and abstraction go hand in hand so much so that you could make the point that they are truly 
+        inseparable. For practical purposes, this is probably true; that said, here’s an encapsulation that’s not 
+        much of an abstraction:
+
