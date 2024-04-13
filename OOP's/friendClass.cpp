@@ -52,3 +52,4 @@ int main()
 	fri.display(g);
 	return 0;
 }
+
