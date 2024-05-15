@@ -1,0 +1,110 @@
+/////     Templates in C++     /////
+
+    A template is a simple yet very powerful tool in C++. The simple idea is to pass the data type 
+    as a parameter so that we don’t need to write the same code for different data types.
+
+    For example, a software company may need to sort() for different data types. Rather than writing 
+    and maintaining multiple codes, we can write one sort() and pass the datatype as a parameter. 
+
+    Internal-Implentation
+    Templates are expanded at compiler time. This is like macros. The difference is, that the compiler does 
+    type-checking before template expansion. The idea is simple, source code contains only function/class, 
+    but compiled code may contain multiple copies of the same function/class.
+
+
+    #include <iostream>
+
+    using namespace std;
+
+    void printData(int value){
+        cout<<value<<endl;
+    }
+    void printData(char value){
+        cout<<value<<endl;
+    }
+    void printData(float value){
+        cout<<value<<endl;
+    }
+    void printData(string value){
+        cout<<value<<endl;
+    }
+
+    int main()
+    {
+        printData('a');
+        printData("a");
+        printData(10);
+        printData(10.0f);
+
+        return 0;
+    }
+
+
+    In the above program in place of writing different function we just need to call one function
+    given below
+
+    
+    #include <iostream>
+    #include <string>  
+    using namespace std;
+
+    // Template function to print any type of data
+    template <typename T>
+    void printData(T value) {
+        cout << value << endl;
+    }
+
+    int main() {
+        printData('a');      // Calls printData(char)
+        printData("a");      // Calls printData(const char*)
+        printData(10);       // Calls printData(int)
+        printData(10.0f);    // Calls printData(float)
+
+        string str = "Hello";
+        printData(str);      // Calls printData(string)
+
+        return 0;
+    }
+
+    
+Using templates in C++ offers several benefits:
+
+Code Reusability: 
+    Templates allow you to write generic code that can work with different data types without duplicating 
+    code. This promotes code reusability and reduces redundancy.
+
+Flexibility: 
+    Templates provide flexibility by allowing you to create functions, classes, and data structures 
+    that can work with any data type. This flexibility is especially useful when working with containers 
+    or algorithms that need to handle various data types.
+
+Type Safety: 
+    Templates provide type safety because the compiler performs type checking during compilation. This helps 
+    catch type-related errors at compile time rather than runtime, leading to more robust and reliable code.
+
+Performance: 
+    Template code can sometimes be more efficient than using polymorphism or runtime type checking because 
+    the compiler generates specialized versions of the template code for each data type used. This can lead 
+    to optimized code execution.
+
+Generic Algorithms: 
+    Templates enable the creation of generic algorithms that can operate on different data structures 
+    (e.g., containers like arrays, vectors, lists) without specifying the data type explicitly. This makes it easier 
+    to write and maintain generic algorithms.
+
+Reduced Code Bloat: 
+    Templates can reduce code bloat by generating specialized code only for the types and functions that are actually 
+    used in the program. This helps keep the compiled binary size smaller compared to using explicit code for each data type.
+
+Expressiveness: 
+    Templates make the code more expressive and readable by allowing you to write generic code that is closer to the 
+    problem domain rather than focusing on specific data types.
+    
+
+Overall, templates in C++ provide a powerful mechanism for creating flexible, reusable, and efficient code that can adapt 
+to different data types and requirements.
+
+
+
+
+
