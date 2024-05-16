@@ -1,4 +1,11 @@
 // bad_exception example
+
+/*
+	myfunction is declared with an exception specification that allows it to throw int 
+	and std::bad_exception. However, inside the function, it throws a char ('x'), which 
+	is not listed in the exception specification.
+*/
+
 #include <iostream> // std::cerr
 #include <exception> // std::bad_exception, std::set_unexpected
 using namespace std;

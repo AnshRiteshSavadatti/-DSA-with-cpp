@@ -2,6 +2,7 @@
 #include <iostream> // std::cerr
 #include <stdexcept> // std::length_error
 #include <vector> // std::vector
+
 int main (void) {
 	try {
 	// vector throws a length_error if resized above max_size
