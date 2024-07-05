@@ -1,0 +1,110 @@
+
+
+
+
+/*Association is a relationship between two classes that defines a connection or a link between them. The association can be 
+bi-directional, meaning that both classes can use each other’s methods and properties, or uni-directional, where only one class 
+can use the methods and properties of the other. The relationship can be of any type, such as a one-to-one, one-to-many, or 
+many-to-many.
+
+For example, a Customer class might be associated with an Order class, where each customer can have multiple orders.*/
+
+#include<iostream>
+using namespace std;
+
+class Account {
+public:
+    Account(int id, double balance) : id(id), balance(balance) {}
+    int getId() { return id; }
+    double getBalance() { return balance; }
+private:
+    int id;
+    double balance;
+};
+class Bank {
+public:
+    void transferMoney(Account* fromAccount, Account* toAccount, double amount) {
+        cout<<"Transfer Done\n";// Code to transfer money from one account to another
+    }
+};
+int main() {
+    Account* account1 = new Account(123, 1000.00);
+    Account* account2 = new Account(456, 500.00);
+    Bank bank;
+    bank.transferMoney(account1, account2, 250.00);
+    return 0;
+}
+
+
+
+/*Composition is a relationship between two classes where one class is composed of one or more instances of the other class. The composed class is typically an essential part of the composite class, and if the composite class is destroyed, the composed class will also be destroyed.
+
+For example, a House class might be composed of a Room class, where the Room class cannot exist without the House class.*/
+
+#include<iostream>
+using namespace std;
+
+class Engine {
+public:
+    void start() {
+       cout<<"Started\n"; // Code to start the engine
+    }
+};
+
+
+
+
+class Car {
+public:
+    Car() : engine(new Engine()) {}
+    void startCar() {
+        engine->start();
+    }
+private:
+    Engine* engine;
+};
+
+int main() {
+    Car car;
+    car.startCar();
+    return 0;
+}
+
+/*Aggregation is similar to composition in that it represents a relationship between two classes where one class is composed of one 
+or more instances of the other class. However, in aggregation, the composed class is not an essential part of the composite class, 
+and it can exist independently.
+
+For example, a University class might have an aggregation relationship with a Student class, where the Student class can exist 
+independently of the University class.*/
+
+#include<iostream>
+using namespace std;
+
+class Address {
+public:
+    Address(std::string street, std::string city, std::string state, std::string zip)
+        : street(street), city(city), state(state), zip(zip) {}
+private:
+    std::string street;
+    std::string city;
+    std::string state;
+    std::string zip;
+};
+
+class Person {
+public:
+    Person(std::string name) : name(name), address(nullptr) {}
+    void setAddress(Address* address) {
+        this->address = address;
+        cout<<"Address assigned\n";
+    }
+private:
+    std::string name;
+    Address* address;
+};
+int main() {
+    Address* address = new Address("123 Main St.", "Anytown", "CA", "12345");
+    Person person("John Doe");
+    person.setAddress(address);
+    return 0;
+}

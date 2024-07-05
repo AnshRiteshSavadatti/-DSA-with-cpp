@@ -54,3 +54,22 @@ catch( ExceptionName e1 )  {
     statement, then it immediately terminates the current function and starts finding a matching 
     catch block to handle the thrown exception.
 
+Types of errors (the impact)
+
+    Syntax error: 
+        The compilation fails, the compiler gives the feed back of the syntax error
+    Logical error: 
+        Undesired out put
+    Run time error: 
+        The program exits/terminates abruptly from the statement which caused run time error
+
+
+logic-error
+    -invalid_argument
+    -length_error
+    -out_of_range
+
+runtime_error (arithmetic overflow errors)
+    -overflow_error 
+    -underflow_error
+

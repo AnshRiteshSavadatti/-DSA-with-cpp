@@ -1,0 +1,21 @@
+Late binding, also known as dynamic binding, in Object-Oriented Programming (OOP) in C++ 
+refers to the process where the method that is going to be invoked is determined at runtime 
+instead of compile-time. This is achieved through the use of virtual functions and pointers 
+or references to base classes.
+
+Key Concepts
+
+Virtual Functions:
+    A virtual function is a function that is declared within a base class and is meant to be 
+    overridden in derived classes. It is declared using the keyword virtual.
+
+Polymorphism:
+    Late binding is closely associated with polymorphism, which allows objects of different classes 
+    to be treated as objects of a common base class.
+
+Vtable (Virtual Table):
+    When a class has virtual functions, the compiler creates a vtable for the class. The vtable is 
+    an array of pointers to the virtual functions of the class.
+
+Each object of a class with virtual functions contains a pointer to the vtable (vptr). The vtable 
+mechanism is used to resolve which function to call at runtime.

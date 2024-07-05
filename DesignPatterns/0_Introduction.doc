@@ -1,0 +1,93 @@
+Design Pattern:
+    A general repetative solution to a commonly occuring problem in software.
+
+Types of Design patterns
+    1.Creational Patterns
+    2.Behaviour Patterns
+    3.Structural Patterns
+
+    The main benefit of design patterns is that, they are ideas that can be defined in ways 
+    that are repeatedly useful (reusable).
+
+
+1.Creational Design Pattern
+    In software engineering, creational design patterns are design patterns that deal with object 
+    creation mechanisms, trying to create objects in a manner suitable to the situation. 
+    -Singleton pattern,
+    -Factory method pattern
+
+    -Singleton pattern:
+        ->Singleton pattern is one of the simplest design patterns , as this pattern provides one of 
+        the best ways to create an object.
+
+        ->This pattern involves a single class which is responsible to create an object while making 
+        sure that only single object gets created.
+
+        ->This class provides a way to access its only object which can be accessed directly without 
+        need to instantiate the object of the class.
+
+        ->This is useful when exactly one object is needed to coordinate actions across the system. 
+        For example, if you are using a logger, that writes logs to a file, you can use a singleton 
+        class to create such a logger
+
+        Characteristics of Singleton Pattern
+            Single Instance: 
+                Only one instance of the class is created.
+            Global Access Point: 
+                Provides a global access point to the instance.
+            Controlled Access: 
+                The class itself controls the instantiation process, ensuring that no other 
+                instances can be created.
+
+    A typical implementation of the Singleton pattern in C++ involves:
+
+    -Making the constructor, copy constructor, and assignment operator private to prevent direct 
+     instantiation and copying.
+    -Providing a static method to access the single instance.
+
+
+    -Factory pattern:
+        In Factory pattern, we create object without exposing the creation logic to the client and 
+        refer to newly created object using a common interface.
+
+        The Factory design pattern is a creational pattern that provides a way to create objects without 
+        specifying the exact class of object that will be created. Instead of directly instantiating 
+        objects, you call a factory method, which returns an instance of the appropriate class.
+
+        The idea is to use a static/non-static member-function (static factory method) which creates 
+        & returns instances, hiding the details of class modules from user.
+
+        The Factory Method pattern is a design pattern used to define a runtime interface for creating 
+        an object. It’s called a factory because it creates various types of objects without necessarily 
+        knowing what kind of object it creates or how to create it.
+
+        When to Use the Factory Pattern?
+
+        When you need to decouple the client code from the object creation code.
+        When the exact types of objects to be created are determined at runtime.
+        When a class cannot anticipate the class of objects it must create.
+        When you want to provide a library of objects that needs to be created in a standard way.
+
+
+2.Behaviour Pattern:
+    In Strategy pattern, a class behaviour or its algorithm can be changed at run time.
+
+    -Strategy pattern:
+        The Strategy design pattern is a behavioral pattern that allows you to define a family of 
+        algorithms, encapsulate each one of them, and make them interchangeable. This pattern lets 
+        the algorithm vary independently from the clients that use it. In simpler terms, it helps 
+        in switching algorithms or strategies at runtime without altering the code that uses these 
+        algorithms.
+
+    Key Components of the Strategy Pattern
+    Strategy: 
+        This is an interface or an abstract class that defines a set of methods (often just one method) 
+        that represent the algorithms or strategies.
+
+    Concrete Strategies: 
+        These are the concrete classes that implement the Strategy interface and provide specific 
+        implementations for the algorithms.
+
+    Context: 
+        This is a class that uses the Strategy interface to perform its operations. The Context class 
+        holds a reference to a Strategy object and delegates the algorithm execution to this object.

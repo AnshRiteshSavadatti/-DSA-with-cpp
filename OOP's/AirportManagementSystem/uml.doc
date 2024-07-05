@@ -1,0 +1,256 @@
+-------------------------
+|       SeatType        |
+|-----------------------|
+| + getSeatInfo() : void|
+| + isAvailable() : bool|
+-------------------------
+            |
+            |
+  -------------------------------
+  |       |           |         |
+  |       |           |         |
+-------------------  --------------  ----------------  -------------
+|      Economy      |  | PremiumEconomy|  |  Business   |  | FirstClass   |
+|-------------------|  |--------------|  |-------------|  |-------------|
+| + getSeatInfo()   |  | + getSeatInfo()|  | + getSeatInfo()|  | + getSeatInfo()|
+| + isAvailable()   |  | + isAvailable()|  | + isAvailable()|  | + isAvailable()|
+-------------------  --------------  --------------  -------------
+
+
+-------------------------
+|      Passenger        |
+|-----------------------|
+| - name : string       |
+| - passport_number : string |
+| - contact_info : string|
+| - date_of_birth : string|
+| - hasSeat : bool      |
+|-----------------------|
+| + checkIn() : void    |
+| + getBoardingPass() : void|
+| + getName() : string  |
+| + bookSeat() : void   |
+-------------------------
+
+-------------------------
+|       Flight          |
+|-----------------------|
+| - departure_time : string|
+| - arrival_time : string|
+| - flight_number : string|
+| - duration : int      |
+| - airline : string    |
+| - seats : vector<SeatType*>|
+| - passengers : vector<Passenger*>|
+| - max_seats : int     |
+| - reserved_seats : int|
+|-----------------------|
+| + reserveSeat() : void|
+| + addPassenger() : void|
+| + getFlightDetails() : void|
+-------------------------
+
+
+-------------------------
+|      Transaction      |
+|-----------------------|
+| - transaction_id : int|
+| - flight_id : int     |
+| - passenger_id : int  |
+| - amount : double     |
+|-----------------------|
+| + processPayment() : void|
+| + validateTransaction() : void|
+| + refund() : void     |
+-------------------------
+
+
+-------------------------
+|       Ticket          |
+|-----------------------|
+| - ticket_number : int |
+| - seat_number : int   |
+| - booking_date : string|
+| - price : double      |
+|-----------------------|
+| + getTicketDetails() : void|
+| + updateTicket() : void|
+| + validateTicket() : void|
+| + cancelTicket() : void|
+-------------------------
+
+
+-------------------------
+|        Crew           |
+|-----------------------|
+| - crew_id : int       |
+| - name : string       |
+| - position : string   |
+| - shift_timing : string|
+|-----------------------|
+| + getDetails() : void |
+-------------------------
+            ^
+            |
+-------------------------
+|     AirHostess        |
+|-----------------------|
+| - languages_spoken : vector<string>|
+| - experience : int    |
+|-----------------------|
+| + getDetails() : void |
+-------------------------
+            ^
+            |
+-------------------------
+|       Purser          |
+|-----------------------|
+| - seniority_level : int|
+| - training_certifications : vector<string>|
+|-----------------------|
+| + getDetails() : void |
+-------------------------
+
+
+
+-------------------------
+|       Airport         |
+|-----------------------|
+| - name : string       |
+| - location : string   |
+| - terminals : int     |
+| - runways : int       |
+| - flights : vector<Flight*>|
+| - passengers : vector<Passenger*>|
+| - crew : vector<Crew*>|
+| - transactions : vector<Transaction*>|
+| - tickets : vector<Ticket*>|
+|-----------------------|
+| + addFlight() : void  |
+| + addPassenger() : void|
+| + addCrew() : void    |
+| + addTransaction() : void|
+| + addTicket() : void  |
+| + getFlights() : void |
+-------------------------
+
+
+            SeatType
+            ^   ^   ^
+           /    |    \
+Economy   Business  FirstClass
+           \    |
+       PremiumEconomy
+
+
+
+Airport
+|    |    |    |    |
+v    v    v    v    v
+Flight  Passenger  Crew  Transaction  Ticket
+ |      / |   \            |
+ |     /  |    \           |
+ v    v   v     v          v
+SeatType-----------------> Economy
+|   |    |   |
+|   |    |   |
+Business PremiumEconomy FirstClass
+
+
+
+
+
+SeatType and its Derived Classes
+
+
+          SeatType
+         /   |   |   \
+Economy  Business  FirstClass
+         \   |
+      PremiumEconomy
+
+
+Passenger and its Relationships
+
+
+Airport ------------- manages ------------> Passenger
+|
+v
+Passenger
+
+
+Flight and its Relationships
+
+
+Airport ------------- manages ------------> Flight
+|
+v
+Flight
+|
+v
+Flight ------------- manages ------------> SeatType
+|
+v
+Flight ------------- manages ------------> Passenger
+
+
+Transaction and its Relationships
+
+Airport ------------- manages ------------> Transaction
+|
+v
+Transaction
+
+
+Ticket and its Relationships
+
+
+Airport ------------- manages ------------> Ticket
+|
+v
+Ticket
+
+
+Crew and its Derived Classes
+
+Airport ------------- manages ------------> Crew
+|
+v
+Crew
+|
+v
+Crew ------------- specializes into -------> AirHostess
+|
+v
+Crew ------------- specializes into -------> Purser
+
+
+Overall Relationships
+Airport Manages Flights
+
+
+Airport ------------- manages ------------> Flight
+Airport Manages Passengers
+
+
+Airport ------------- manages ------------> Passenger
+Airport Manages Crew
+
+
+Airport ------------- manages ------------> Crew
+Airport Manages Transactions
+
+
+Airport ------------- manages ------------> Transaction
+Airport Manages Tickets
+
+
+Airport ------------- manages ------------> Ticket
+Flight Manages Passengers
+
+
+Flight ------------- manages ------------> Passenger
+Flight Manages Seats
+
+
+Flight ------------- manages ------------> SeatType

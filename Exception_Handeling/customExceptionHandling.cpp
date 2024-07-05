@@ -41,7 +41,6 @@ public:
 
 
 private:
-    int d;
     const char* message;
 };
 
@@ -57,7 +56,7 @@ int main() {
         } else if (b == 1) {
             throw 'e';
         } else if (b < 0) {
-            throw MyException("Dekh bhai less than 0 mat dal");
+            throw MyException("Dekh yaar less than 0 mat dal");
         }
     } catch (char ch) {
         cout << "Divided by one, ha !! :)" << endl;

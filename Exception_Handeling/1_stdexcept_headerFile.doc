@@ -1,0 +1,28 @@
+The `<stdexcept>` header in C++ typically includes several other standard headers indirectly. 
+These headers are essential for exception handling and related functionality. Here are some of 
+the headers that are indirectly included when you include `<stdexcept>`:
+
+1. <exception>:
+        This is the fundamental header for exceptions in C++. It defines the `std::exception` class 
+        and other essential exception-related functionality.
+
+2. <string>:
+        This header provides the `std::string` class and related string manipulation functions. It's 
+        often included indirectly because exceptions may involve string messages.
+
+3. <cstdlib>: 
+        This header provides functionality for general utilities, including `std::abort()` and `std::exit()`, 
+        which can be related to exception handling in certain cases.
+
+4. <stdexcept> itself: 
+        It includes itself recursively, as it may define additional types, constants, or functions related 
+        to the exception classes it provides (`std::logic_error`, `std::runtime_error`, etc.).
+
+5. <stdexcept> also includes `<iosfwd>`, `<new>`, and `<typeinfo>`:
+     These headers provide additional support for I/O, dynamic memory allocation, and type information, 
+     respectively, which can be relevant in exception handling scenarios.
+
+Keep in mind that the actual content included indirectly via `<stdexcept>` can vary depending on the C++ 
+implementation and standard library version. However, these headers are commonly included because they are 
+closely related to exception handling, error reporting, and managing exceptional situations in C++ 
+programs.

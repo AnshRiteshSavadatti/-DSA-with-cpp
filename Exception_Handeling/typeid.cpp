@@ -8,7 +8,7 @@
     is unbuffered by default. This means that the data written to std::cerr is immediately flushed 
     to the output device, ensuring that error messages are displayed promptly, even if the program 
     crashes or exits unexpectedly.
-
+    
 */
 
 #include <iostream> // std::cerr
