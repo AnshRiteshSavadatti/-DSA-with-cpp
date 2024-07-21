@@ -1,5 +1,7 @@
 //  https://www.geeksforgeeks.org/problems/sum-of-the-longest-bloodline-of-a-tree/1
 
+/* Space complexity O(H) if tree is squed then O(n)*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
